@@ -6,10 +6,10 @@ import urllib.request
 import time
 from bs4 import BeautifulSoup
 
-SUBREDDIT="Subreddit you want to mirror"
+SUBREDDIT="url_of_subreddit"
 postedTXT="posted.txt"
-auth = tweepy.OAuthHandler(C_KEY, C_SECRET)
-auth.set_access_token(A_TOKEN, A_TOKEN_SECRET)
+auth = tweepy.OAuthHandler("C_key", "SK_key")
+auth.set_access_token("A_token", "A_sk_token")
 api = tweepy.API(auth)
 
 def deleteAllTweets():
@@ -38,6 +38,7 @@ def tweetImage(url, message):
 
     if not os.path.exists(folderName):
         os.makedirs(folderName)
+
     try:
         urllib.request.urlretrieve(url, os.path.join(folderName, fileName))
         api.update_with_media(folderName + '/' + fileName, status=message)
