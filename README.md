@@ -46,3 +46,10 @@ auth.set_access_token("A_token", "A_sk_token")
 
 All this keys and tokens can be found in your app found in [https://apps.twitter.com/](https://apps.twitter.com)
 
+## Run the bot
+
+Execute in the shell
+```
+python3 bot.py
+```
+
