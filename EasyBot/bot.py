@@ -18,6 +18,9 @@ def deleteAllTweets():
 
 def already_tweeted(url):#check if already posted
     found = False
+    if not os.path.exists(postedTXT):
+        open(postedTXT, 'w+')
+
     with open(postedTXT, 'r') as in_file:
         for line in in_file:
             if url in line:
